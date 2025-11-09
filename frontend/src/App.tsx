@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import EquipmentList from './pages/EquipmentList';
 import MyRequests from './pages/MyRequests';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminEquipmentManagement from './pages/AdminEquipmentManagement';
 import HeaderBar from './components/Header';
 import {  setToken } from './api';
 import { User } from './types';
@@ -44,6 +45,7 @@ function App() {
           <Route path="/" element={<EquipmentList />} />
           <Route path="/my-requests" element={<MyRequests />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/equipment" element={<AdminEquipmentManagement />} />
         </Routes>
       </Content>
     </Layout>

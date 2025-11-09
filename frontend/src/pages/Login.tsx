@@ -21,6 +21,9 @@ export default function Login({ onLogin }: { onLogin: (user: User, token: string
           <Form.Item name="email" label="Email" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
+          <Form.Item name="password" label="password" rules={[{ required: true }]}>
+            <Input.Password />
+          </Form.Item>
           <Form.Item>
             <Button type="primary" block htmlType="submit">Login</Button>
           </Form.Item>

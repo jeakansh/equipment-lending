@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  name      String
+  role      Role      @default(STUDENT)
+  createdAt DateTime  @default(now())
+  token     String?
+  requests  LoanRequest[]
+}
+
+model Equipment {
+  id         Int       @id @default(autoincrement())
+  name       String
+  category   String
+  condition  String
+  totalQty   Int
+  createdAt  DateTime  @default(now())
+  requests   LoanRequest[]
+}
+
+model LoanRequest {
+  id           Int        @id @default(autoincrement())
+  user         User       @relation(fields: [userId], references: [id])
+  userId       Int
+  equipment    Equipment  @relation(fields: [equipmentId], references: [id])
+  equipmentId  Int
+  quantity     Int
+  startDate    DateTime
+  endDate      DateTime
+  status       RequestStatus @default(PENDING)
+  createdAt    DateTime    @default(now())
+  processedBy  Int?        
+  processedAt  DateTime?
+  returnedAt   DateTime?
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  RETURNED
+}
+
+enum Role {
+  STUDENT
+  STAFF
+  ADMIN
+}

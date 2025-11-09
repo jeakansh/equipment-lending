@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import prisma from '../prismaClient.js';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import prisma from '../prismaClient';
+import { requireAuth, requireRole } from '../middleware/auth';
 const router = Router();
 
 // Create request (student/staff)

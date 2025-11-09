@@ -1,4 +1,4 @@
-import prisma from '../prismaClient.js';
+import prisma from '../prismaClient';
 
 // returns number available for given equipmentId and date range
 export async function getAvailableQuantity(equipmentId: number, startDate: Date, endDate: Date) {

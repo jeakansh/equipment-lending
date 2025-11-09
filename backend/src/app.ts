@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import authRoutes from './routes/auth.js'
-import equipmentRoutes from './routes/equipment.js';
-import requestsRoutes from './routes/requests.js';
-import { loadUser } from './middleware/auth.js';
+import authRoutes from './routes/auth'
+import equipmentRoutes from './routes/equipment';
+import requestsRoutes from './routes/requests';
+import { loadUser } from './middleware/auth';
 
 const app = express();
 app.use(cors());

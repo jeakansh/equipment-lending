@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import prisma from '../prismaClient.js';
-import { requireRole } from '../middleware/auth.js';
+import prisma from '../prismaClient';
+import { requireRole } from '../middleware/auth';
 const router = Router();
 
 // Create equipment (admin)

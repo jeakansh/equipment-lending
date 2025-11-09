@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import prisma from '../prismaClient.js';
+import prisma from '../prismaClient';
 
 // Load user from Authorization: Bearer <token>
 export async function loadUser(req: Request, res: Response, next: NextFunction) {
